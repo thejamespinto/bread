@@ -10,6 +10,8 @@ module Bread
       end
     end
 
+    attr_accessor :_bread_trees
+
     def _bread_trees
       @_bread_trees ||= {}
     end
