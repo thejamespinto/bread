@@ -19,7 +19,7 @@ module Bread
                   list = []
                   while tmp
                     arr = controller.instance_eval(&tmp[:block])
-                    list << {title: arr.first, path: arr.second}
+                    list << {title: arr.first, path: arr.second} if arr
                     tmp = tmp[:parent]
                   end
                   list.reverse
