@@ -2,28 +2,21 @@ module Bread
   module Helper
 
     def bread
-      return @bread if @bread
+      Config.instance.reload! # if should_reload?
 
-      tmp = nil
-      controller._bread_trees.each do |i_action, hash|
-        if i_action.to_s == action_name
-          tmp = hash
-          break
-        end
+      crumb_definitions = Config.instance.crumb_definitions
+      keys_for_current_action = controller.bread_keys
+      
+      @crumbs = []
+      keys_for_current_action.map do |key|
+        crumbs_to_block = crumb_definitions[key] || :crumb_definitions_not_found
+        self.instance_eval(&crumbs_to_block)
       end
+      @crumbs
+    end
 
-      @bread =  if tmp.nil?
-                  puts "No Bread for this Action. Please check https://github.com/yakko/bread for more info".light_yellow
-                  []
-                else
-                  list = []
-                  while tmp
-                    arr = controller.instance_eval(&tmp[:block])
-                    list << {title: arr.first, path: arr.second} if arr
-                    tmp = tmp[:parent]
-                  end
-                  list.reverse
-                end
+    def crumb_to(title, path, options={})
+      @crumbs << Crumb.new(self, title, path, options)
     end
 
   end

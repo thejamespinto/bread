@@ -1,0 +1,886 @@
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProducts (20140203163238)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "category" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140203163238"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "category" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140203163238')[0m
+  [1m[36m (10.9ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "category" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140203163238')[0m
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "category" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140203163238')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:14:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 56ms (Views: 52.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:15:25 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:15:32 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:15:43 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:15:58 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:15:59 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:26 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:35 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:52 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:53 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:54 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:54 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:55 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:16:59 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:00 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:22 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:23 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:24 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:41 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:42 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:51 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:17:51 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:18:24 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:18:25 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:18:26 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:18:26 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:19:20 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:23:51 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (1.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:23:52 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:03 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:04 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:06 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:11 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:12 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:21 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:21 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:49 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:24:58 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:25:06 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `title' for {:icon=>"home", :title=>"Root", :path=>"/"}:Hash):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.title.title %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb___4147110381799962212_70278970462080'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___4147110381799962212_70278970462080'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:25:44 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `title' for {:icon=>"home", :title=>"Root", :path=>"/"}:Hash):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.title.title %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb___4147110381799962212_70278970462080'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___4147110381799962212_70278970462080'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:25:54 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:26:25 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:26:27 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:26:28 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:29:45 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:29:48 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:29:48 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:29:49 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:29:59 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:30:00 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:30:01 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:30:02 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:30:03 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:30:03 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:31:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 57ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+     9: <body>
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+  config/breadcrumbs.rb:3:in `block (2 levels) in <top (required)>'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___819680760126844606_70330506249800'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:32:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 51ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:32:17 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:34:31 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:34:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 58ms
+
+ActionView::Template::Error (undefined method `[]' for #<Bread::Crumb:0x007fc5eb22dab8>):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb__1272100775880914804_70244023597020'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1272100775880914804_70244023597020'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:35:20 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `[]' for #<Bread::Crumb:0x007fc5eb4f4eb8>):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb__1272100775880914804_70244023597020'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1272100775880914804_70244023597020'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:35:21 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `[]' for #<Bread::Crumb:0x007fc5ec371608>):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb__1272100775880914804_70244023597020'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1272100775880914804_70244023597020'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:36:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 60ms
+
+ActionView::Template::Error (undefined method `keys' for #<Bread::Crumb:0x007fcf44cb7d28>):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb___643965220189377158_70264094073740'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___643965220189377158_70264094073740'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:36:22 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `keys' for #<Bread::Crumb:0x007fcf43a26470>):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb___643965220189377158_70264094073740'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___643965220189377158_70264094073740'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:36:31 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `keys' for #<Bread::Crumb:0x007fcf4424cb68>):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= crumb.keys %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb___643965220189377158_70264094073740'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___643965220189377158_70264094073740'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:36:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:38:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:38:56 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `title' for {:icon=>"home", :title=>"Root", :path=>"/"}:Bread::Crumb):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb__4409658884655637071_70226902704320'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4409658884655637071_70226902704320'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:39:24 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `title' for {:icon=>"home", :title=>"Root", :path=>"/"}:Bread::Crumb):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb__4409658884655637071_70226902704320'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4409658884655637071_70226902704320'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:39:25 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `title' for {:icon=>"home", :title=>"Root", :path=>"/"}:Bread::Crumb):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb__4409658884655637071_70226902704320'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__4409658884655637071_70226902704320'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:39:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 97ms
+
+ActionView::Template::Error (undefined method `path_path' for #<#<Class:0x007fe262341b28>:0x007fe262348888>):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb__3804000058378666375_70305140091280'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3804000058378666375_70305140091280'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:40:03 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `path_path' for #<#<Class:0x007fe262341b28>:0x007fe261ebdd18>):
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li data-key="<%= crumb[:key] %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+    17: </ul>
+  app/views/layouts/application.html.erb:14:in `block in _app_views_layouts_application_html_erb__3804000058378666375_70305140091280'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__3804000058378666375_70305140091280'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (34.2ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (45.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:40:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.8ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:42:37 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `current?' for {:icon=>"home", :title=>"Root", :path=>"/"}:Bread::Crumb):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li class="<%= 'active' if crumb.current? %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb___69519601481111010_70096855329980'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___69519601481111010_70096855329980'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:42:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (2.0ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 82ms
+
+ActionView::Template::Error (undefined method `current_page?' for #<ProductsController:0x007fe09c272890>):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li class="<%= 'active' if crumb.current? %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb___492793618240562537_70301326216080'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___492793618240562537_70301326216080'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:42:48 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `current_page?' for #<ProductsController:0x007fe09b611970>):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li class="<%= 'active' if crumb.current? %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb___492793618240562537_70301326216080'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___492793618240562537_70301326216080'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:43:37 -0500
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (undefined method `current_page?' for #<ProductsController:0x007fe09b76a830>):
+    10: 
+    11: <ul id="breadcrumbs">
+    12: <% bread.each do |crumb| %>
+    13:   <li class="<%= 'active' if crumb.current? %>">
+    14:     <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    15:   </li>
+    16: <% end %>
+  app/views/layouts/application.html.erb:13:in `block in _app_views_layouts_application_html_erb___492793618240562537_70301326216080'
+  app/views/layouts/application.html.erb:12:in `each'
+  app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___492793618240562537_70301326216080'
+
+
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /Users/tj/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (16.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-03 16:43:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  Rendered products/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2014-02-03 16:43:59 -0500
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)

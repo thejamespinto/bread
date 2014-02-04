@@ -6,18 +6,13 @@ module Bread
       attr_reader :bread_block
       def bread(&block)
         @bread_block = block
-        before_filter :execute_bread_command
       end
     end
 
-    attr_accessor :_bread_trees
-
-    def _bread_trees
-      @_bread_trees ||= {}
-    end
-
-    def execute_bread_command
-      Command.new(self).instance_eval(&self.class.bread_block)
+    def bread_keys
+      cmd = ControllerLayoutCommand.new(self)
+      cmd.instance_eval(&self.class.bread_block)
+      cmd.keys
     end
 
   end
