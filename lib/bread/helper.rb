@@ -6,7 +6,7 @@ module Bread
 
       crumb_definitions = Config.instance.crumb_definitions
       keys_for_current_action = controller.bread_keys
-      
+
       @crumbs = []
       keys_for_current_action.map do |key|
         crumbs_to_block = crumb_definitions[key] || :crumb_definitions_not_found

@@ -9,9 +9,8 @@ module Bread
       if File.exists? config_file
         load config_file
       else
-        puts "ACHEI NAO".on_red
-        # `rails g bread:install`
-        # self.reload!
+        `rails g bread:install`
+        self.reload!
       end
     end
 
@@ -20,11 +19,6 @@ module Bread
       cmd.instance_eval(&block)
       @crumb_definitions = cmd.crumb_definitions
     end
-
-
-
-
-
-
+    
   end
 end

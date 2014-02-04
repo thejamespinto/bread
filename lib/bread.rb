@@ -12,4 +12,7 @@ require "bread/config"
 
 
 module Bread
+  def self.config(&block)
+    Config.instance.config(&block)
+  end
 end

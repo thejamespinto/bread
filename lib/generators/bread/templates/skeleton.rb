@@ -1,15 +1,12 @@
 Bread.config do
 
-  # # products
-  # key(:all_products)         { bread_to("Contacts",     :products, icon: 'list')                                                                                                         } 
-  # key(:make_product)         { bread_to("Add",          [:products, :new], icon: 'plus', target: '_blank') } 
-  # key(:products_by_category) { bread_to(@category.name, [:products, :by_category, @category], icon: 'filter')                                                                            } 
-  # key(:view_product)         { bread_to(@product.name,  @product)                                                                                                                        } 
-  # key(:change_product)       { bread_to("Edit",         [@product, :edit])                                                                                                               } 
-  # key(:product_timeline)     { bread_to("Timeline",     [@product, :timeline])                                                                                                           } 
-  # key(:product_year)         { bread_to(@year,          [@product, :timeline, @year])                                                                                                    } 
-  # key(:product_month)        { bread_to(@month,         [@product, :timeline, @year, @month])                                                                                            } 
-  # key(:product_day)          { bread_to(@day,           [@product, :timeline, @year, @month, @day])                                                                                      } 
-  # key(:product_time)         { bread_to(@time,          [@product, :timeline, @year, @month, @day, @time])                                                                               } 
+  key(:root) { crumb_to("Root",         root_path, icon: 'home') } 
 
+  # products
+  key(:all_products)         { crumb_to("Products",     :products, icon: 'list')                              } 
+  key(:make_product)         { crumb_to("Add",          [:new, :product], icon: 'plus', target: '_blank')     } 
+  key(:products_by_category) { crumb_to(@category.name, by_category_products_path(@category), icon: 'filter') } 
+  key(:view_product)         { crumb_to(@product.name,  @product)                                             } 
+  key(:change_product)       { crumb_to("Edit",         [:edit, @product])                                    } 
+  
 end
