@@ -12,11 +12,20 @@ module Bread
         crumbs_to_block = crumb_definitions[key] || :crumb_definitions_not_found
         self.instance_eval(&crumbs_to_block)
       end
+      @crumbs = determinate_first_and_last(@crumbs)
       @crumbs
     end
 
     def crumb_to(title, path, options={})
       @crumbs << Crumb.new(self, title, path, options)
+    end
+
+    private
+
+    def determinate_first_and_last(crumbs)
+      crumbs.first[:_first] = true
+      crumbs.last[:_last] = true
+      crumbs
     end
 
   end

@@ -2,7 +2,7 @@ module Bread
   class Crumb < Hash
 
     def initialize(context, title, path, options)
-      @context = context
+      self.context = context
       options.merge(title: title, path: path).each do |k, v|
         self[k] = v
       end
@@ -16,9 +16,21 @@ module Bread
       self[:path]
     end
 
-    def current?
-      @context.current_page? path
+    def first?
+      self[:_first]
     end
+
+    def last?
+      self[:_last]
+    end
+
+    def current?
+      context.current_page? path
+    end
+
+    private
+
+    attr_accessor :context
 
   end
 end
