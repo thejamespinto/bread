@@ -1,34 +1,20 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-
-
-  bread do
-    # alias_actions :new,   :create
-    # alias_actions :edit,  :update, :destroy
-
-    actions(:index)          { crumbs :root, :all_products,   parent: nil    }
-      actions(:new, :create) { crumbs :make_product,          parent: :index, lala: 1, lele: 2, lili: 3434 }
-      actions(:by_category)  { crumbs :products_by_category,  parent: :index }
-        actions(:show)    do
-                            parent = @category.present? ? :by_category : :index
-                            crumbs(:view_product, parent: parent)
-                          end
-          actions(:edit)         { crumbs :change_product, parent: :show }
-          actions(:timeline)     { crumbs :product_timeline, parent: :show }
-  end
-
-
-
-
   # GET /products
   def index
     @products = Product.all
   end
 
+  # GET /products/category/1
+  def by_category
+    @category = params[:category]
+    @products = Product.where(category: params[:category])
+    render :index
+  end
+
   # GET /products/1
   def show
-    @category = "lalala"
   end
 
   # GET /products/new
@@ -62,8 +48,11 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   def destroy
-    @product.destroy
-    redirect_to products_url, notice: 'Product was successfully destroyed.'
+    if @product.destroy
+      redirect_to products_url, notice: 'Product was successfully destroyed.'
+    else
+      render action: 'edit'
+    end
   end
 
   private

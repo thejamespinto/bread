@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: prod-1
-  category: cat-a
+  product_id: 
+  name: MyString
+  order: 1
 
 two:
-  name: prod-2
-  category: cat-a
+  product_id: 
+  name: MyString
+  order: 1

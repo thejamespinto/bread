@@ -1,8 +1,8 @@
 module Bread
   class Crumb < Hash
 
-    def initialize(context, title, path, options)
-      self.context = context
+    def initialize(controller, title, path, options)
+      self.controller = controller
       options.merge(title: title, path: path).each do |k, v|
         self[k] = v
       end
@@ -25,12 +25,12 @@ module Bread
     end
 
     def current?
-      context.current_page? path
+      controller.view_context.current_page? path
     end
 
     private
 
-    attr_accessor :context
+    attr_accessor :controller
 
   end
 end

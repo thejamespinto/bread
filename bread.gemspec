@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["tapgyn@gmail.com"]
   spec.description   = %q{Simple and organized Breadcrumbs for Rails 3 and 4}
   spec.summary       = %q{Set up all your breadcrumbs with on a dependency-based simple block of code}
-  spec.homepage      = "https://github.com/yakko/bread"
+  spec.homepage      = "https://github.com/hi/bread"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

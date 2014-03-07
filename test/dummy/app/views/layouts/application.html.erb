@@ -9,12 +9,17 @@
 <body>
 
 <ul id="breadcrumbs">
-<% bread.each do |crumb| %>
-  <li class="<%= 'active' if crumb.current? %>">
-    <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
-  </li>
-<% end %>
+  <% bread.each do |crumb| %>
+    <li class="<%= 'active' if crumb.current? %>">
+      <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    </li>
+  <% end %>
 </ul>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+
 
 <%= yield %>
 
