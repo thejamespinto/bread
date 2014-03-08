@@ -1,10 +1,14 @@
 class ProductPhotosController < ApplicationController
-  before_action :set_product
-  before_action :set_product_photo, only: [:show, :edit, :update, :destroy]
+  # Use callbacks to share common setup or constraints between actions.
+  before_actions do
+    actions                                  { @product = Product.find(params[:product_id]) }
+    actions(:index)                          { @product_photos = @product.product_photos                }
+    actions(:new, :create)                   { @product_photo  = @product.product_photos.build(product_photo_params) }
+    actions(:show, :edit, :update, :destroy) { @product_photo  = @product.product_photos.find(params[:id])  }
+  end
 
   # GET /product_photos
   def index
-    @product_photos = @product.product_photos
   end
 
   # GET /product_photos/1
@@ -13,7 +17,6 @@ class ProductPhotosController < ApplicationController
 
   # GET /product_photos/new
   def new
-    @product_photo = @product.product_photos.build
   end
 
   # GET /product_photos/1/edit
@@ -22,8 +25,6 @@ class ProductPhotosController < ApplicationController
 
   # POST /product_photos
   def create
-    @product_photo = @product.product_photos.build(product_photo_params)
-
     if @product_photo.save
       redirect_to [@product, @product_photo], notice: 'Product photo was successfully created.'
     else
@@ -50,18 +51,13 @@ class ProductPhotosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-
-    def set_product
-      @product = Product.find(params[:product_id])
-    end
-
-    def set_product_photo
-      @product_photo = @product.product_photos.find(params[:id])
-    end
 
     # Only allow a trusted parameter "white list" through.
     def product_photo_params
-      params.require(:product_photo).permit(:product_id, :name, :order)
+      if params[:product_photo]
+        params.require(:product_photo).permit(:name, :order)
+      else
+        {}
+      end
     end
 end

@@ -20,3 +20,4 @@ gem 'colorize'
 
 # dummy app
 gem 'devise'
+gem 'before_actions'

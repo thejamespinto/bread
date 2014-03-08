@@ -1,5 +1,10 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  # Use callbacks to share common setup or constraints between actions.
+  before_actions do
+    actions(:new, :create)                   { @product = Product.new(product_params) }
+    actions(:show, :edit, :update, :destroy) { @product = Product.find(params[:id])  }
+  end
+
 
   # GET /products
   def index
@@ -56,13 +61,12 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
-
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:name, :category)
+      if params[:product]
+        params.require(:product).permit(:name, :category)
+      else
+        {}
+      end
     end
 end
