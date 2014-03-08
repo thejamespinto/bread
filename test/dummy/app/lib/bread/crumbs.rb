@@ -19,4 +19,11 @@ Bread.crumbs.config do
   crumb(:@edit_photo) { to "Edit",               h.edit_product_product_photo_path   }
   crumb(:@photo)      { to @product_photo.unchanged_name,  h.product_product_photo_path }
 
+  # devise
+  crumb(:@devise_sign_in)    { to "Sign In",         h.new_user_session_path       }
+  crumb(:@devise_sign_up)    { to "Sign Up",         h.new_user_registration_path  }
+  crumb(:@devise_edit_user)  { to "Edit Profile",    h.edit_user_registration_path }
+  crumb(:@devise_remember)   { to "Forgot Password", h.new_user_password_path      }
+
+
 end

@@ -2,7 +2,7 @@ module Bread
   module Helper
 
     def bread
-      crumbset = Bread.actions.get_crumbset(controller_name, action_name)
+      crumbset = Bread.actions.get_crumbset(controller_path, action_name)
       Bread.crumbs.crumbs_for(controller, crumbset)
     end
 

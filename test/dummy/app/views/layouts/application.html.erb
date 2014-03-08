@@ -20,6 +20,13 @@
 <p class="alert"><%= alert %></p>
 
 
+<% if (current_user rescue false) %>
+  <p class="current_user"><%= current_user.email %></p>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <p class="current_user">Guest</p>
+<% end %>
+
 
 <%= yield %>
 

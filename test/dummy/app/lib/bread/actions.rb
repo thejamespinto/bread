@@ -15,4 +15,18 @@ Bread.actions.config do
             actions(:edit) { crumbs :@photos, :@photo, :@edit_photo }
       end
 
+
+  #devise
+  controller 'devise/sessions' do
+    actions(:new)  { crumbs :@root, :@devise_sign_in   }
+  end
+  controller 'devise/registrations' do
+    actions(:new)  { crumbs :@root, :@devise_sign_up   }
+    actions(:edit) { crumbs :@root, :@devise_edit_user }
+  end
+  controller 'devise/passwords' do
+    actions(:new)  { crumbs :@root, :@devise_sign_in, :@devise_remember }
+    actions(:edit) { crumbs :@root, :@devise_sign_in, :@devise_remember }
+  end
+
 end

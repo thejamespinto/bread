@@ -5,9 +5,9 @@ module Bread
         
         attr_reader :top_scope, :parent_crumbs
 
-        def initialize(top_scope, controller_name, options)
+        def initialize(top_scope, controller_path, options)
           @top_scope = top_scope
-          @controller_name = controller_name
+          @controller_path = controller_path
           @action_scopes = {}
           @aliases = {}
           @options = options
@@ -24,7 +24,7 @@ module Bread
 
         def get_crumbset(action_name)
           action_name = get_aliased_action_name(action_name)
-          action_scope = @action_scopes[action_name] || raise("no action scope for '#{action_name}'")
+          action_scope = @action_scopes[action_name] || raise("no action scope for #{@controller_path}#'#{action_name}'")
           action_scope.crumbset
         end
 
@@ -56,12 +56,12 @@ module Bread
 
             def define_parent_crumbs
               @parent_crumbs = @options[:parent_crumbs] || []
-              raise "parent_crumbs must be an Array ----> controller(:#{controller_name})" if !@parent_crumbs.is_a?(Array)
+              raise "parent_crumbs must be an Array ----> controller(:#{controller_path})" if !@parent_crumbs.is_a?(Array)
             end
 
             def raise_if_any_invalid_option
               invalid_option = (@options.keys - [:parent_crumbs]).first
-              raise "Invalid option :#{invalid_option} ----> controller(:#{controller_name}, #{invalid_option}: '...') do" if invalid_option
+              raise "Invalid option :#{invalid_option} ----> controller(:#{controller_path}, #{invalid_option}: '...') do" if invalid_option
             end
       end
     end
