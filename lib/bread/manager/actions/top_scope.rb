@@ -5,6 +5,7 @@ module Bread
 
         def initialize
           @controllers = {}
+          add_devise_support
         end
 
         def controller(controller_path, options={}, &block)
@@ -19,7 +20,23 @@ module Bread
         end
 
 
+        private
 
+            def add_devise_support
+              return if !defined? Devise
+              
+              controller 'devise/sessions' do
+                actions(:new)  { crumbs :@root, :@devise_sign_in   }
+              end
+              controller 'devise/registrations' do
+                actions(:new)  { crumbs :@root, :@devise_sign_up   }
+                actions(:edit) { crumbs :@root, :@devise_edit_user }
+              end
+              controller 'devise/passwords' do
+                actions(:new)  { crumbs :@root, :@devise_sign_in, :@devise_remember }
+                actions(:edit) { crumbs :@root, :@devise_sign_in, :@devise_remember }
+              end
+            end
         
       end
     end
