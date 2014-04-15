@@ -1,6 +1,9 @@
 # Bread
 
-TODO: Write a gem description
+[![Code Climate](https://codeclimate.com/github/hi/bread.png)](https://codeclimate.com/github/hi/bread)
+
+
+TODO: This gem is under development and internal use at Hello Innovation
 
 ## Installation
 
