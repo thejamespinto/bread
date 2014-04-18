@@ -2,6 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/hi/bread.png)](https://codeclimate.com/github/hi/bread)
 [![Build Status](https://travis-ci.org/hi/bread.svg?branch=master)](https://travis-ci.org/hi/bread)
+[![Dependency Status](https://gemnasium.com/hi/bread.svg)](https://gemnasium.com/hi/bread)
 [![Inline docs](http://inch-pages.github.io/github/hi/bread.png)](http://inch-pages.github.io/github/hi/bread)
 
 __This gem is under development and internal use at Hello Innovation__
