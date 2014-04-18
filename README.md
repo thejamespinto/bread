@@ -3,7 +3,11 @@
 [![Code Climate](https://codeclimate.com/github/hi/bread.png)](https://codeclimate.com/github/hi/bread)
 
 
-TODO: This gem is under development and internal use at Hello Innovation
+
+__This gem is under development and internal use at Hello Innovation__
+
+[![Gem Version](https://badge.fury.io/rb/bread.svg)](http://badge.fury.io/rb/bread)
+
 
 ## Installation
 
