@@ -15,7 +15,7 @@ __This gem is under development and is not considered production-ready__
 
 [![Dependency Status](https://gemnasium.com/bread-gem/bread.svg)](https://gemnasium.com/bread-gem/bread)
 
-[![Inline docs](http://inch-pages.github.io/github/bread-gem/bread.png)](http://inch-pages.github.io/github/bread-gem/bread)
+[![Inline docs](http://inch-ci.org/github/bread-gem/bread.png?branch=master)](http://inch-ci.org/github/bread-gem/bread)
 
 
 
