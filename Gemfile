@@ -13,7 +13,7 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
-gem 'rails', '4.0.0' #  June 25, 2013
+gem 'rails', '>= 4.0.0' #  June 25, 2013
 gem 'sqlite3'
 gem 'turn'
 gem 'capybara'
@@ -22,3 +22,6 @@ gem 'colorize'
 # dummy app
 gem 'devise'
 gem 'before_actions'
+
+# test
+# gem "codeclimate-test-reporter", group: :test, require: nil

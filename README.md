@@ -1,32 +1,72 @@
 # Bread
 
-[![Code Climate](https://codeclimate.com/github/hi/bread.png)](https://codeclimate.com/github/hi/bread)
-[![Build Status](https://travis-ci.org/hi/bread.svg?branch=master)](https://travis-ci.org/hi/bread)
-[![Dependency Status](https://gemnasium.com/hi/bread.svg)](https://gemnasium.com/hi/bread)
-[![Inline docs](http://inch-pages.github.io/github/hi/bread.png)](http://inch-pages.github.io/github/hi/bread)
+Add breadcrumbs to your rails app while keeping your code very clean
 
-__This gem is under development and internal use at Hello Innovation__
+__This gem is under development and is not considered production-ready__
+
+
+## Status
 
 [![Gem Version](https://badge.fury.io/rb/bread.svg)](http://badge.fury.io/rb/bread)
+
+[![Build Status](https://travis-ci.org/bread-gem/bread.svg?branch=master)](https://travis-ci.org/bread-gem/bread)
+
+[![Code Climate](https://codeclimate.com/github/bread-gem/bread.png)](https://codeclimate.com/github/bread-gem/bread)
+
+[![Dependency Status](https://gemnasium.com/bread-gem/bread.svg)](https://gemnasium.com/bread-gem/bread)
+
+[![Inline docs](http://inch-pages.github.io/github/bread-gem/bread.png)](http://inch-pages.github.io/github/bread-gem/bread)
+
+
+
+
+
+## References
+
+* Home page: https://github.com/bread-gem/bread
+* API Doc: http://rdoc.info/gems/bread
+* Version: https://rubygems.org/gems/bread
+* Trello Board: https://trello.com/b/wGQ5XDhJ/bread-gem
+
+## Support
+
+* Bugs/Issues: https://github.com/bread-gem/bread/issues
+* Support: http://stackoverflow.com/questions/tagged/bread
+* Support/Chat: [![Gitter chat](https://badges.gitter.im/bread-gem/bread.png)](https://gitter.im/bread-gem/bread)
+
+
+
+
 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'bread'
+```ruby
+gem 'bread'
+```
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+rails g bread:install
+```
 
-Or install it yourself as:
 
-    $ gem install bread
+
+
 
 ## Usage
 
 TODO: Write usage instructions here
+
+
+
+
+
+
 
 ## Contributing
 
@@ -35,3 +75,11 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Versioning
+
+__Before Actions__ uses [Semantic Versioning 2.0.0](http://semver.org)
+
+## Copyright
+
+Copyright 2013-2014 James Pinto – Released under [MIT License](http://www.opensource.org/licenses/MIT)
