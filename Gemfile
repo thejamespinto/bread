@@ -13,7 +13,7 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
-gem 'rails', '>= 4.0.0' #  June 25, 2013
+gem 'rails', '>= 4' #  June 25, 2013
 gem 'sqlite3'
 gem 'capybara'
 gem 'colorize'
