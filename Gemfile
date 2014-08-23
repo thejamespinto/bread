@@ -17,9 +17,9 @@ gem 'sqlite3'
 gem 'capybara'
 gem 'colorize'
 
-# dummy app
-gem 'devise'
-gem 'before_actions'
+# # dummy app
+# gem 'devise'
+# gem 'before_actions'
 
 # test
 gem "codeclimate-test-reporter", group: :test, require: nil

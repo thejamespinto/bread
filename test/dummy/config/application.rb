@@ -4,6 +4,9 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 require "bread"
+require 'devise'
+require 'before_actions'
+
 
 module Dummy
   class Application < Rails::Application
