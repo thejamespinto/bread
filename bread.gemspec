@@ -18,9 +18,7 @@ Gem::Specification.new do |spec|
 
   # dependencies
   spec.add_runtime_dependency 'rails', ['>= 4.0', '< 5.0']
-
-
-
+  spec.add_runtime_dependency 'colorize'
 
   # test
   spec.test_files = Dir["spec/**/*"]
@@ -28,12 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'capybara'
   spec.add_development_dependency 'codeclimate-test-reporter'
-
+  spec.add_development_dependency "before_actions"
+  
 end
-
-  # spec.add_development_dependency "bundler", "~> 1.3"
-  # spec.add_development_dependency "before_actions", ">= 1.0"
-  # spec.add_development_dependency "devise", "3.2.4"
-
-  # spec.add_development_dependency "rake"
 

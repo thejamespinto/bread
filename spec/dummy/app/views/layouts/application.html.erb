@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<ul id="breadcrumbs">
+  <% bread.each do |crumb| %>
+    <li class="<%= 'active' if crumb.current? %>">
+      <%= link_to crumb.title, crumb.path, class: "icon icon-#{crumb[:icon]}" %>
+    </li>
+  <% end %>
+</ul>
+
+
 <%= yield %>
 
 </body>
