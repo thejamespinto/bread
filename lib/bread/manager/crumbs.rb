@@ -10,7 +10,7 @@ module Bread
       end
 
       def crumbs_for(controller, crumbset)
-        reload
+        Bread.reload!
         crumb_scope = CrumbScope.new(controller)
         crumb_blocks_for(crumbset).each do |bl|
           crumb_scope.instance_eval(&bl)
@@ -33,19 +33,6 @@ module Bread
             crumbs.last[:_last] = true
             crumbs
           end
-
-          def reload
-            config_file = Rails.root.join "app/lib/bread/crumbs.rb"
-            unless File.exists? config_file
-              #`rails g bread:install`
-              raise "should have config crumbs file"
-            end
-
-            load(config_file)
-            self
-          end
-
-
 
     end
   end
