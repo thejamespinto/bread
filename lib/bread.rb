@@ -1,5 +1,7 @@
 require "bread/version"
 
+require 'singleton'
+
 require "bread/reloader"
 require "bread/controller"
 require "bread/data/crumb"
@@ -14,7 +16,6 @@ require "bread/manager/crumbs/crumb_scope"
 
 
 require 'colorize'
-
 
 
 

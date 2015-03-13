@@ -5,6 +5,14 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 require "bread"
 
+
+module Bread
+  def self.rails3?
+    ::Rails::VERSION::MAJOR == 3
+  end
+end
+
+
 module Dummy
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

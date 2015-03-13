@@ -9,4 +9,9 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Dummy::Application.config.secret_key_base = 'f8f1cfd724082fee10202ea60f857d16b79a9aa676f85c35e0150f8119fa2da3911c966f051018054f6eaffd8165a1b7e790ff18634e40dbe11f6863fedb5cff'
+string = 'f8f1cfd724082fee10202ea60f857d16b79a9aa676f85c35e0150f8119fa2da3911c966f051018054f6eaffd8165a1b7e790ff18634e40dbe11f6863fedb5cff'
+if Bread.rails3?
+  Dummy::Application.config.secret_token    = string
+else
+  Dummy::Application.config.secret_key_base = string
+end

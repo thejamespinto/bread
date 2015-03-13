@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
-      if @product.update(product_params)
+      if product_update
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
@@ -92,7 +92,19 @@ class ProductsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def product_params
-      params.require(:product).permit(:name, :category_id)
+      if Bread.rails3?
+        params[:product]
+      else
+        params.require(:product).permit(:name, :category_id)
+      end
+    end
+
+    def product_update
+      if Bread.rails3?
+        @product.update_attributes(product_params)
+      else
+        @product.update(product_params)
+      end
     end
 end
 

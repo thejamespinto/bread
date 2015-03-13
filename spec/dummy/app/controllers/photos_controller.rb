@@ -62,7 +62,7 @@ class PhotosController < ApplicationController
   # PATCH/PUT /photos/1.json
   def update
     respond_to do |format|
-      if @photo.update(photo_params)
+      if photo_update
         format.html { redirect_to [@product, @photo], notice: 'Photo was successfully updated.' }
         format.json { head :no_content }
       else
@@ -90,7 +90,19 @@ class PhotosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def photo_params
-      params.require(:photo).permit(:name)
+      if Bread.rails3?
+        params[:photo]
+      else
+        params.require(:photo).permit(:name)
+      end
+    end
+
+    def photo_update
+      if Bread.rails3?
+        @photo.update_attributes(photo_params)
+      else
+        @photo.update(photo_params)
+      end
     end
 end
 
