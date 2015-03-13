@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "bread"
   spec.version       = Bread::VERSION
   spec.authors       = ["James Pinto"]
-  spec.email         = ["tjamespinto@gmail.com"]
+  spec.email         = ["thejamespinto@gmail.com"]
   spec.homepage      = "https://github.com/bread-gem/bread"
   spec.summary       = "Rails Gem for breadcrumbs"
   spec.description   = "Add breadcrumbs to your rails app while keeping your code very clean"
