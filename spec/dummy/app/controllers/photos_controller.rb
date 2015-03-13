@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
   def create
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+        format.html { redirect_to [@product, @photo], notice: 'Photo was successfully created.' }
         format.json { render json: @photo, status: :created }
       else
         format.html { render action: 'new' }
@@ -63,7 +63,7 @@ class PhotosController < ApplicationController
   def update
     respond_to do |format|
       if @photo.update(photo_params)
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+        format.html { redirect_to [@product, @photo], notice: 'Photo was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -77,7 +77,7 @@ class PhotosController < ApplicationController
   def destroy
     respond_to do |format|
       if @photo.destroy
-        format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
+        format.html { redirect_to product_photos_url, notice: 'Photo was successfully destroyed.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -90,7 +90,7 @@ class PhotosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def photo_params
-      params.require(:photo).permit(:product_id)
+      params.require(:photo).permit(:name)
     end
 end
 

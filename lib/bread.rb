@@ -1,7 +1,7 @@
 require "bread/version"
 
 require "bread/reloader"
-require "bread/helper"
+require "bread/controller"
 require "bread/data/crumb"
 require "bread/manager/manager"
 require "bread/manager/actions"

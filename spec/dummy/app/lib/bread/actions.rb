@@ -1,9 +1,3 @@
-puts "app/lib/actions.rb has been reloaded!".red.blink
-
-
-
-
-
 Bread.actions.config do
 
   controller :products, parent_crumbs: [:@root] do

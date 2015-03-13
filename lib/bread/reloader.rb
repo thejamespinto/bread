@@ -11,17 +11,18 @@ module Bread
     end
  
     def reload!
-      return unless Rails.env.development?
       @checker.execute if updated?
     end
 
     private
 
     def updated?
-      if @started
+      if not @started
+        @started = true
+      elsif not Rails.env.development?
         @checker.updated?
       else
-        @started = true
+        false
       end
     end
 

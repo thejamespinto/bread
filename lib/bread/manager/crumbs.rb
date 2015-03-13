@@ -2,8 +2,6 @@ module Bread
   class Manager
     class Crumbs
 
-
-
       def config(&block)
         @top_scope = TopScope.new
         @top_scope.instance_eval(&block)
