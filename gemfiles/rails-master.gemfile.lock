@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 675f299c8eec586ccc5d8faa6a66e22b387acee2
+  revision: 5f6dab2270ef11081b2ceb70c630910cf071eede
   branch: master
   specs:
     actionmailer (5.0.0.alpha)
@@ -65,7 +65,7 @@ GIT
 PATH
   remote: ../
   specs:
-    bread (0.0.12)
+    bread (0.0.13)
       colorize
 
 GEM
