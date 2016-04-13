@@ -4,8 +4,9 @@ require 'singleton'
 
 require "bread/reloader"
 require "bread/configuration"
+
 require "bread/controller"
-require "bread/data/crumb"
+require "bread/crumb"
 require "bread/manager/actions/controller_scope"
 require "bread/manager/actions/action_scope"
 require "bread/manager/crumbs"
@@ -32,7 +33,7 @@ module Bread
   end
 
   def self.configuration
-    Crumbset.instance
+    Configuration.instance
   end
 end
 

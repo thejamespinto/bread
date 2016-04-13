@@ -8,31 +8,32 @@ module Bread
         def initialize(controller)
           @controller = controller
           @crumbset = []
-          bring_instance_vars(controller)
+          bring_instance_vars
         end
 
         def h
           controller.view_context
         end
 
-        def to(text, path, options={})
-          @crumbset << Crumb.new(@controller, text, path, options={})
+        def c
+          @controller
         end
 
-
+        def to(text, path, options={})
+          @crumbset << Crumb.new(c, text, path, options)
+        end
 
 
 
         private
 
-            def bring_instance_vars(target)
-              target.instance_variables.each do |key|
-                ivar = target.instance_variable_get(key)
-                self.instance_variable_set(key, ivar)
-              end
-            end
+        def bring_instance_vars
+          c.instance_variables.each do |key|
+            ivar = c.instance_variable_get(key)
+            self.instance_variable_set(key, ivar)
+          end
+        end
 
-            
       end
     end
   end
