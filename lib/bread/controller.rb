@@ -11,7 +11,7 @@ module Bread
     end
 
     def bread
-      Bread.for_controller(controller)
+      @_bread ||= Bread.for_controller(controller)
     end
 
   end
