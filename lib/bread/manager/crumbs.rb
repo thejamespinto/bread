@@ -23,8 +23,8 @@ module Bread
           end
 
           def append_first_and_last(crumbs)
-            crumbs.first[:_first] = true
-            crumbs.last[:_last] = true
+            crumbs.first.first!
+            crumbs.last.last!
             crumbs
           end
 
