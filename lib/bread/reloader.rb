@@ -1,26 +1,31 @@
 module Bread
-  class Reloader    
+  class Reloader
     include Singleton
 
-    def initialize
-      @files   = Dir["#{Rails.root}/app/lib/bread/*"]
-      @checker = ActiveSupport::FileUpdateChecker.new(@files) do
-        @files.each { |f| load f }
-        puts "  Bread has reloaded!".light_blue
-      end
-    end
- 
     def reload!
-      @checker.execute if updated?
+      if updated?
+        checker.execute
+      end
     end
 
     private
+
+    def checker
+      @checker ||= begin
+        str = 'config/breadcrumbs.rb'
+        path = Rails.root.join(str)
+        ActiveSupport::FileUpdateChecker.new([path]) do
+          load path
+          puts "  #{str} has reloaded!".light_blue
+        end
+      end
+    end
 
     def updated?
       if not @started
         @started = true
       elsif not Rails.env.development?
-        @checker.updated?
+        checker.updated?
       else
         false
       end

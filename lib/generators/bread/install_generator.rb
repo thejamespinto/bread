@@ -3,8 +3,8 @@ module Bread
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../templates', __FILE__)
 
-      def main_config_files
-        directory "bread", "app/lib/bread"
+      def config_file
+        copy_file "config.rb", "config/breadcrumbs.rb"
       end
 
       def inject_html
@@ -20,7 +20,7 @@ module Bread
         puts "\tINSERT THIS BLOCK ON #{destination_path}".red
         puts html.green
       end
-      
+
     end
   end
 end
