@@ -1,7 +1,7 @@
 module Bread
-  class Manager
-    class Crumbs
-      class CrumbScope
+  class Configuration
+    module Scopes
+      class Crumb
 
         attr_reader :crumbset, :controller
 
@@ -20,7 +20,7 @@ module Bread
         end
 
         def to(text, path, options={})
-          @crumbset << Crumb.new(c, text, path, options)
+          @crumbset << Bread::Crumb.new(c, text, path, options)
         end
 
 

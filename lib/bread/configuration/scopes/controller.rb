@@ -1,7 +1,7 @@
 module Bread
-  class Manager
-    class Actions
-      class ControllerScope
+  class Configuration
+    module Scopes
+      class Controller
 
         attr_reader :top_scope, :parent_crumbs
 
@@ -28,7 +28,7 @@ module Bread
         def actions(*action_names, &block)
           action_names.each do |action_name|
             action_name = action_name.to_s
-            action_scopes[action_name] = action_scope = ActionScope.new(self, action_name)
+            action_scopes[action_name] = action_scope = Scopes::Action.new(self, action_name)
             action_scope.instance_eval(&block)
           end
           true
@@ -68,6 +68,7 @@ module Bread
           invalid_option = (options.keys - [:parent_crumbs]).first
           raise "Invalid option :#{invalid_option} ----> controller(:#{controller_path}, #{invalid_option}: '...') do" if invalid_option
         end
+
       end
     end
   end

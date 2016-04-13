@@ -1,11 +1,10 @@
 module Bread
-  class Manager
-    class Crumbs
-      include Singleton
+  class Configuration
+    class Reader
 
       def crumbs_for(controller, crumbset)
         Bread.reload!
-        crumb_scope = CrumbScope.new(controller)
+        crumb_scope = Scopes::Crumb.new(controller)
         crumb_blocks_for(crumbset).each do |bl|
           crumb_scope.instance_eval(&bl)
         end
