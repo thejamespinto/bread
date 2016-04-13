@@ -27,18 +27,13 @@ module Bread
   class Crumbset
     module Crumbs
 
-      def initialize
-        super
-        @crumb_blocks = {}
-      end
-
       def crumb(token, &block)
-        @crumb_blocks[token] = block
+        crumbs[token] = block
         true
       end
 
-      def get_crumb_block(token)
-        @crumb_blocks[token] || raise("no crumb block for: :#{token}")
+      def crumbs
+        @crumbs ||= {}
       end
 
     end

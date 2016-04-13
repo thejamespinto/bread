@@ -1,6 +1,7 @@
 module Bread
   class Manager
     class Crumbs
+      include Singleton
 
       def crumbs_for(controller, crumbset)
         Bread.reload!
@@ -18,7 +19,7 @@ module Bread
       private
 
           def crumb_blocks_for(crumbset)
-            crumbset.map { |token| top_scope.get_crumb_block(token) }
+            crumbset.map { |token| top_scope.crumbs[token] || raise("no crumb block for: :#{token}") }
           end
 
           def append_first_and_last(crumbs)
