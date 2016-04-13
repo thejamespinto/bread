@@ -1,35 +1,33 @@
-require "bread/version"
+require 'bread/version'
 
 require 'singleton'
-
-require "bread/reloader"
-require "bread/controller"
-require "bread/data/crumb"
-require "bread/manager/manager"
-require "bread/manager/actions"
-require "bread/manager/actions/top_scope"
-require "bread/manager/actions/controller_scope"
-require "bread/manager/actions/action_scope"
-require "bread/manager/crumbs"
-require "bread/manager/crumbs/top_scope"
-require "bread/manager/crumbs/crumb_scope"
-
-
 require 'colorize'
 
-
+require 'bread/configuration'
+require 'bread/controller'
+require 'bread/crumb'
+require 'bread/reader'
+require 'bread/reloader'
 
 module Bread
-  def self.actions
-    Manager.instance.actions
-  end
+  class << self
+    def for_controller(controller)
+      reload!
+      Reader.new(controller).read
+    end
 
-  def self.crumbs
-    Manager.instance.crumbs
-  end
+    def reload!
+      @reloader ||= Reloader.new(Rails.root.join('config', 'breadcrumbs.rb'))
+      @reloader.reload!
+    end
 
-  def self.reload!
-    Reloader.instance.reload!
+    def configure(&block)
+      configuration.instance_eval(&block)
+    end
+
+    def configuration
+      Configuration.instance
+    end
   end
 end
 

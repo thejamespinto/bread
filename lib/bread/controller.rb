@@ -6,14 +6,12 @@ module Bread
       helper_method :bread
     end
 
+    def controller
+      self
+    end
+
     def bread
-      controller =  if respond_to?(:controller)
-                      controller
-                    else
-                      self
-                    end
-      crumbset = Bread.actions.get_crumbset(controller_path, action_name)
-      Bread.crumbs.crumbs_for(controller, crumbset)
+      @_bread ||= Bread.for_controller(controller)
     end
 
   end

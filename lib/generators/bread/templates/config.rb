@@ -1,26 +1,6 @@
 # Learn more at https://github.com/bread-gem/bread
 
-Bread.actions.config do
-
-  controller :products, parent_crumbs: [:@root] do
-    actions(:index)          { crumbs :@products                            }
-      actions(:new)          { crumbs :@products, :@new_product             }
-      actions(:by_category)  { crumbs :@products, :@products_by_category    }
-        actions(:show)       { crumbs :@products, :@product                 }
-          actions(:edit)     { crumbs :@products, :@product, :@edit_product }
-  end
-
-      controller :photos, parent_crumbs: [:@root, :@products, :@product] do
-        actions(:index)    { crumbs :@photos                        }
-          actions(:new)    { crumbs :@photos, :@new_photo           }
-          actions(:show)   { crumbs :@photos, :@photo               }
-            actions(:edit) { crumbs :@photos, :@photo, :@edit_photo }
-      end
-
-end
-
-Bread.crumbs.config do
-
+Bread.configure do
   crumb(:@root) { to "Home", :root, icon: 'home' }
 
   # products
@@ -40,5 +20,19 @@ Bread.crumbs.config do
   crumb(:@edit_photo) { to "Edit",               h.edit_product_photo_path   }
   crumb(:@photo)      { to @photo.name,  h.product_photo_path }
 
+  controller :products, parent_crumbs: [:@root] do
+    actions(:index)          { crumbs :@products                            }
+      actions(:new)          { crumbs :@products, :@new_product             }
+      actions(:by_category)  { crumbs :@products, :@products_by_category    }
+      actions(:show)         { crumbs :@products, :@product                 }
+        actions(:edit)       { crumbs :@products, :@product, :@edit_product }
+  end
+
+      controller :photos, parent_crumbs: [:@root, :@products, :@product] do
+        actions(:index)    { crumbs :@photos                        }
+          actions(:new)    { crumbs :@photos, :@new_photo           }
+          actions(:show)   { crumbs :@photos, :@photo               }
+            actions(:edit) { crumbs :@photos, :@photo, :@edit_photo }
+      end
 
 end

@@ -24,6 +24,14 @@ module Bread
       self[:_last]
     end
 
+    def first!
+      self[:_first] = true
+    end
+
+    def last!
+      self[:_last] = true
+    end
+
     def current?
       controller.view_context.current_page? path
     end
