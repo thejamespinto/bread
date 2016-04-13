@@ -2,11 +2,6 @@ module Bread
   class Manager
     class Crumbs
 
-      def config(&block)
-        @top_scope = TopScope.new
-        @top_scope.instance_eval(&block)
-      end
-
       def crumbs_for(controller, crumbset)
         Bread.reload!
         crumb_scope = CrumbScope.new(controller)
@@ -23,13 +18,17 @@ module Bread
       private
 
           def crumb_blocks_for(crumbset)
-            crumbset.map { |token| @top_scope.get_crumb_block(token) }
+            crumbset.map { |token| top_scope.get_crumb_block(token) }
           end
-          
+
           def append_first_and_last(crumbs)
             crumbs.first[:_first] = true
             crumbs.last[:_last] = true
             crumbs
+          end
+
+          def top_scope
+            Bread.configuration
           end
 
     end

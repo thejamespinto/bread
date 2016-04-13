@@ -30,7 +30,8 @@ Dir[File.join(SPEC_ROOT, "support/**/*.rb")].each { |f| require f }
 #
 # Multiple Gemfiles
 #
-puts "\e[0;35;49mTesting against Rails #{Rails::VERSION::STRING}\e[0m" #.magenta
+puts "RUBY  #{RUBY_VERSION}.#{RUBY_PATCHLEVEL} #{RUBY_RELEASE_DATE} (#{RUBY_PLATFORM})".magenta
+puts "RAILS #{Rails::VERSION::STRING}".magenta
 # database: ":memory:"
 puts "creating sqlite in memory database"
 ActiveRecord::Schema.verbose = false
