@@ -1,4 +1,3 @@
-puts "uau".on_magenta
 module BreadSpecControllerMethods
 
   def bread_titles
