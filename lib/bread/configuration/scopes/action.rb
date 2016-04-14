@@ -3,17 +3,17 @@ module Bread
     module Scopes
       class Action
 
-        attr_reader :crumbset
-
         def initialize(controller_scope, action_name)
-          @controller_scope = controller_scope
-          @action_name = action_name
-          @crumbset = []
-          crumbs(@controller_scope.parent_crumbs)
+          @controller_scope, @action_name = controller_scope, action_name
+          crumbs(controller_scope.parent_crumbs)
+        end
+
+        def crumbset
+          @crumbset ||= []
         end
 
         def crumbs(*symbols)
-          @crumbset += symbols.flatten
+          (crumbset << symbols).flatten!
         end
 
       end

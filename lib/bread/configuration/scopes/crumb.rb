@@ -3,12 +3,15 @@ module Bread
     module Scopes
       class Crumb
 
-        attr_reader :crumbset, :controller
+        attr_reader :controller
 
         def initialize(controller)
           @controller = controller
-          @crumbset = []
           bring_instance_vars
+        end
+
+        def crumbset
+          @crumbset ||= []
         end
 
         def h
@@ -20,7 +23,7 @@ module Bread
         end
 
         def to(text, path, options={})
-          @crumbset << Bread::Crumb.new(c, text, path, options)
+          crumbset << Bread::Crumb.new(c, text, path, options)
         end
 
         private
