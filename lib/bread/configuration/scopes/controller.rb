@@ -19,9 +19,8 @@ module Bread
           end
         end
 
-        def crumb_keys_for_action(action_name)
-          action_scope = action_scope_for_action(aliased(action_name))
-          action_scope.crumb_keys
+        def read_action(action_name)
+          _read_action(aliased(action_name))
         end
 
         def actions(*action_names, &block)
@@ -56,7 +55,7 @@ module Bread
           aliases[action_name] || action_name
         end
 
-        def action_scope_for_action(action_name)
+        def _read_action(action_name)
           action_scopes[action_name] || raise("no action scope for #{controller_path}#'#{action_name}'")
         end
 

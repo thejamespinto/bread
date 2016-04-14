@@ -9,11 +9,11 @@ module Bread
         end
 
         def crumbs(*symbols)
-          (crumb_keys << symbols).flatten!
+          (keys << symbols).flatten!
         end
 
-        def crumb_keys
-          @crumb_keys ||= []
+        def keys
+          @keys ||= []
         end
 
       end

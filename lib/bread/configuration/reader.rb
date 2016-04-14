@@ -7,14 +7,6 @@ module Bread
       end
 
       def read
-        crumb_keys   = Bread.configuration.for_controller(c.controller_path).crumb_keys_for_action(c.action_name)
-        crumb_blocks = Bread.configuration.crumbs_for_keys(crumb_keys)
-        crumb_scope  = Scopes::Crumb.new(controller)
-
-        crumb_blocks.each do |bl|
-          crumb_scope.instance_eval(&bl)
-        end
-
         crumb_scope.read
       end
 
@@ -22,6 +14,21 @@ module Bread
 
       attr_reader :controller
       alias :c :controller
+
+      def crumb_scope
+        cs = Scopes::Crumb.new(controller)
+        crumb_blocks.each do |bl|
+          cs.instance_eval(&bl)
+        end
+        cs
+      end
+
+      def crumb_blocks
+        controller_scope = Bread.configuration.read_controller(c.controller_path)
+        action_scope     = controller_scope.read_action(c.action_name)
+        keys             = action_scope.keys
+        Bread.configuration.crumbs_for_keys(keys)
+      end
 
     end
   end

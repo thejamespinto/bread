@@ -9,7 +9,7 @@ module Bread
         true
       end
 
-      def for_controller(controller_path)
+      def read_controller(controller_path)
         controllers[controller_path.to_s] || raise("no controller #{controller_path} in #{controllers.keys}")
       end
 
