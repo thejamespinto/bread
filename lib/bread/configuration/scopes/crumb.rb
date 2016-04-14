@@ -23,12 +23,14 @@ module Bread
           @crumbset << Bread::Crumb.new(c, text, path, options)
         end
 
-
-
         private
 
+        # based on https://github.com/rails/rails/blob/acf654b1c4a1ffe2a90d6ea63a0b989d656bb87d/actionpack/lib/abstract_controller/rendering.rb#L66
         def bring_instance_vars
-          c.instance_variables.each do |key|
+          protected_vars = c._protected_ivars
+          variables      = c.instance_variables.reject { |s| protected_vars.include? s }
+
+          variables.each do |key|
             ivar = c.instance_variable_get(key)
             self.instance_variable_set(key, ivar)
           end
