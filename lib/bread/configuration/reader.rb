@@ -26,11 +26,13 @@ module Bread
       end
 
       def crumb_keys
-        @crumb_keys ||= configuration.for_controller(c.controller_path).for_action(c.action_name)
+        @crumb_keys ||= configuration
+          .for_controller(c.controller_path)
+          .crumb_keys_for_action(c.action_name)
       end
 
       def crumb_blocks
-        crumb_keys.map { |key| configuration.crumbs[key] || raise("no crumb block for: :#{key}") }
+        crumb_keys.map { |key| configuration.crumb_for_key(key) }
       end
 
       def configuration

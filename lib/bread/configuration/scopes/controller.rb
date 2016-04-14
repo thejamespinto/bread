@@ -19,9 +19,8 @@ module Bread
           end
         end
 
-        def for_action(action_name)
-          action_name = get_aliased_action_name(action_name)
-          action_scope = action_scopes[action_name] || raise("no action scope for #{controller_path}#'#{action_name}'")
+        def crumb_keys_for_action(action_name)
+          action_scope = action_scope_for_action(aliased(action_name))
           action_scope.crumb_keys
         end
 
@@ -50,8 +49,12 @@ module Bread
           @action_scopes ||= {}
         end
 
-        def get_aliased_action_name(action_name)
+        def aliased(action_name)
           aliases[action_name] || action_name
+        end
+
+        def action_scope_for_action(action_name)
+          action_scopes[action_name] || raise("no action scope for #{controller_path}#'#{action_name}'")
         end
 
         def prepend_default_alias_actions

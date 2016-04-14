@@ -1,15 +1,13 @@
-require "bread/version"
+require 'bread/version'
 
 require 'singleton'
-
-require "bread/reloader"
-require "bread/configuration"
-
-require "bread/controller"
-require "bread/crumb"
-
-
 require 'colorize'
+
+require 'bread/crumb'
+require 'bread/reloader'
+require 'bread/configuration'
+require 'bread/controller'
+
 
 
 
