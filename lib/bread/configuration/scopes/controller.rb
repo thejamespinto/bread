@@ -25,9 +25,8 @@ module Bread
         end
 
         def actions(*action_names, &block)
-          action_names.each do |action_name|
-            action_name = action_name.to_s
-            action_scopes[action_name] = action_scope = Scopes::Action.new(self, action_name)
+          action_names.map(&:to_s).each do |action_name|
+            action_scope = build_action_scope(action_name)
             action_scope.instance_eval(&block)
           end
           true
@@ -40,6 +39,10 @@ module Bread
         private
 
         attr_reader :controller_path, :options
+
+        def build_action_scope(action_name)
+          action_scopes[action_name] = Scopes::Action.new(self, action_name)
+        end
 
         def aliases
           @aliases ||= {}

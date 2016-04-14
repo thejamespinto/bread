@@ -13,6 +13,8 @@ module Bread
         controllers[controller_path.to_s] || raise("no controller #{controller_path} in #{controllers.keys}")
       end
 
+      private
+
       def controllers
         @controllers ||= {}
       end

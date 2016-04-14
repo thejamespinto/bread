@@ -7,12 +7,16 @@ module Bread
         true
       end
 
-      def crumbs
-        @crumbs ||= {}
+      def crumbs_for_keys(keys)
+        keys.map do |key|
+          crumbs[key] || raise("no crumb block for: :#{key}")
+        end
       end
 
-      def crumb_for_key(key)
-        crumbs[key] || raise("no crumb block for: :#{key}")
+      private
+
+      def crumbs
+        @crumbs ||= {}
       end
 
     end
