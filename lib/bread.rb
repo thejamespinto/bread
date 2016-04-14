@@ -12,7 +12,7 @@ require 'bread/reloader'
 module Bread
   class << self
     def for_controller(controller)
-      Bread.reload!
+      reload!
       Reader.new(controller).read
     end
 
