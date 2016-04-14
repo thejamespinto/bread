@@ -3,23 +3,31 @@ require 'bread/version'
 require 'singleton'
 require 'colorize'
 
-require 'bread/crumb'
-require 'bread/reader'
 require 'bread/configuration'
 require 'bread/controller'
+require 'bread/crumb'
+require 'bread/reader'
+require 'bread/reloader'
 
 module Bread
-  def self.for_controller(controller)
-    configuration.reload!
-    Reader.new(controller).read
-  end
+  class << self
+    def for_controller(controller)
+      Bread.reload!
+      Reader.new(controller).read
+    end
 
-  def self.configure(&block)
-    configuration.instance_eval(&block)
-  end
+    def reload!
+      @reloader ||= Reloader.new(Rails.root.join('config', 'breadcrumbs.rb'))
+      @reloader.reload!
+    end
 
-  def self.configuration
-    Configuration.instance
+    def configure(&block)
+      configuration.instance_eval(&block)
+    end
+
+    def configuration
+      Configuration.instance
+    end
   end
 end
 

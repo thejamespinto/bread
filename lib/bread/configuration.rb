@@ -1,5 +1,3 @@
-require_relative 'configuration/reloader'
-
 require_relative 'configuration/controllers'
 require_relative 'configuration/crumbs'
 require_relative 'configuration/devise_support'
@@ -16,10 +14,5 @@ module Bread
     include Controllers
     include Crumbs
     include DeviseSupport
-
-    def reload!
-      @reloader ||= Reloader.new
-      @reloader.reload!
-    end
   end
 end

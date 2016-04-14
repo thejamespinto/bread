@@ -1,33 +1,14 @@
 module Bread
   class Configuration
-    class Reloader
+    class Reloader < ActiveSupport::FileUpdateChecker
 
-      def reload!
-        if updated?
-          checker.execute
-        end
-      end
+      alias :reload! :execute_if_updated
 
-      private
-
-      def checker
-        @checker ||= begin
-          str = 'config/breadcrumbs.rb'
-          path = Rails.root.join(str)
-          ActiveSupport::FileUpdateChecker.new([path]) do
-            load path
-            puts "  #{str} has reloaded!".light_blue
-          end
-        end
-      end
-
-      def updated?
-        if not @started
-          @started = true
-        elsif not Rails.env.development?
-          checker.updated?
-        else
-          false
+      def initialize(path)
+        load path
+        super([path]) do
+          load path
+          puts "#{path} has reloaded!".light_blue
         end
       end
 
