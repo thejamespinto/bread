@@ -8,12 +8,12 @@ module Bread
           crumbs(controller_scope.parent_crumbs)
         end
 
-        def crumbset
-          @crumbset ||= []
+        def crumb_keys
+          @crumb_keys ||= []
         end
 
         def crumbs(*symbols)
-          (crumbset << symbols).flatten!
+          (crumb_keys << symbols).flatten!
         end
 
       end

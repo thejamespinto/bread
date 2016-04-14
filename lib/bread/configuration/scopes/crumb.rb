@@ -10,8 +10,10 @@ module Bread
           bring_instance_vars
         end
 
-        def crumbset
-          @crumbset ||= []
+        def read
+          array.first.first!
+          array.last.last!
+          array
         end
 
         def h
@@ -23,10 +25,14 @@ module Bread
         end
 
         def to(text, path, options={})
-          crumbset << Bread::Crumb.new(c, text, path, options)
+          array << Bread::Crumb.new(c, text, path, options)
         end
 
         private
+
+        def array
+          @array ||= []
+        end
 
         # based on https://github.com/rails/rails/blob/acf654b1c4a1ffe2a90d6ea63a0b989d656bb87d/actionpack/lib/abstract_controller/rendering.rb#L66
         def bring_instance_vars

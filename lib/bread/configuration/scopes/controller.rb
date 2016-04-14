@@ -19,10 +19,10 @@ module Bread
           end
         end
 
-        def get_crumbset(action_name)
+        def for_action(action_name)
           action_name = get_aliased_action_name(action_name)
           action_scope = action_scopes[action_name] || raise("no action scope for #{controller_path}#'#{action_name}'")
-          action_scope.crumbset
+          action_scope.crumb_keys
         end
 
         def actions(*action_names, &block)

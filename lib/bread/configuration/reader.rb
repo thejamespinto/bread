@@ -2,40 +2,40 @@ module Bread
   class Configuration
     class Reader
 
-      def crumbs_for(controller)
-        crumbset = get_crumbset(controller)
-        crumb_scope = Scopes::Crumb.new(controller)
-        crumb_blocks_for(crumbset).each do |bl|
-          crumb_scope.instance_eval(&bl)
-        end
-        append_first_and_last(crumb_scope.crumbset)
+      def initialize(controller)
+        @controller = controller
       end
 
+      def read
+        crumb_blocks.each do |bl|
+          crumb_scope.instance_eval(&bl)
+        end
 
+        crumb_scope.read
+      end
 
 
 
       private
 
-          def get_crumbset(controller)
-            configuration
-              .get_controller_scope(controller.controller_path)
-              .get_crumbset(controller.action_name)
-          end
+      attr_reader :controller
+      alias :c :controller
 
-          def crumb_blocks_for(crumbset)
-            crumbset.map { |token| configuration.crumbs[token] || raise("no crumb block for: :#{token}") }
-          end
+      def crumb_scope
+        @crumb_scope ||= Scopes::Crumb.new(controller)
+      end
 
-          def append_first_and_last(crumbs)
-            crumbs.first.first!
-            crumbs.last.last!
-            crumbs
-          end
+      def crumb_keys
+        @crumb_keys ||= configuration.for_controller(c.controller_path).for_action(c.action_name)
+      end
 
-          def configuration
-            Bread.configuration
-          end
+      def crumb_blocks
+        crumb_keys.map { |key| configuration.crumbs[key] || raise("no crumb block for: :#{key}") }
+      end
+
+      def configuration
+        Bread.configuration
+      end
 
     end
   end

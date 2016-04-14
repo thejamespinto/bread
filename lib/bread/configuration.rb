@@ -16,8 +16,8 @@ module Bread
     include Crumbs
     include DeviseSupport
 
-    def reader
-      @reader ||= Reader.new
+    def read(controller)
+      Reader.new(controller).read
     end
   end
 end

@@ -16,7 +16,7 @@ require 'colorize'
 module Bread
   def self.for_controller(controller)
     reload!
-    configuration.reader.crumbs_for(controller)
+    configuration.read(controller)
   end
 
   def self.reload!
