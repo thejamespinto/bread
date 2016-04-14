@@ -18,11 +18,8 @@ module Bread
     include DeviseSupport
 
     def reload!
-      reloader.reload!
-    end
-
-    def reloader
       @reloader ||= Reloader.new
+      @reloader.reload!
     end
   end
 end
