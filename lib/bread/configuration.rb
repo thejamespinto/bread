@@ -1,4 +1,3 @@
-require_relative 'configuration/reader'
 require_relative 'configuration/controllers'
 require_relative 'configuration/crumbs'
 require_relative 'configuration/devise_support'
@@ -15,9 +14,5 @@ module Bread
     include Controllers
     include Crumbs
     include DeviseSupport
-
-    def read(controller)
-      Reader.new(controller).read
-    end
   end
 end

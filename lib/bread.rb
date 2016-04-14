@@ -4,17 +4,15 @@ require 'singleton'
 require 'colorize'
 
 require 'bread/crumb'
+require 'bread/reader'
 require 'bread/reloader'
 require 'bread/configuration'
 require 'bread/controller'
 
-
-
-
 module Bread
   def self.for_controller(controller)
-    reload!
-    configuration.read(controller)
+    Bread.reload!
+    Reader.new(controller).read
   end
 
   def self.reload!
