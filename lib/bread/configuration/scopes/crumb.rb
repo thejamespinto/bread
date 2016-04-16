@@ -28,6 +28,12 @@ module Bread
           array << Bread::Crumb.new(c, text, path, options)
         end
 
+        def eval_multiple(blocks)
+          blocks.each do |block|
+            instance_eval(&block)
+          end
+        end
+
         private
 
         def array

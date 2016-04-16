@@ -8,8 +8,6 @@ require_relative 'configuration/scopes/action'
 
 module Bread
   class Configuration
-    include Singleton
-
     include Controllers
     include Crumbs
     include DeviseSupport

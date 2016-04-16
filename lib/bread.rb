@@ -1,6 +1,5 @@
 require 'bread/version'
 
-require 'singleton'
 require 'colorize'
 
 require 'bread/configuration'
@@ -17,8 +16,8 @@ module Bread
     end
 
     def reload!
-      @reloader ||= Reloader.new(Rails.root.join('config', 'breadcrumbs.rb'))
-      @reloader.reload!
+      @reloader ||= Reloader.new(path)
+      cache_classes? or @reloader.reload!
     end
 
     def configure(&block)
@@ -26,8 +25,15 @@ module Bread
     end
 
     def configuration
-      Configuration.instance
+      @configuration ||= Configuration.new
+    end
+
+    def path
+      Rails.root.join('config', 'breadcrumbs.rb')
+    end
+
+    def cache_classes?
+      Rails.application.config.cache_classes
     end
   end
 end
-

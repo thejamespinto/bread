@@ -16,9 +16,7 @@ module Bread
 
     def crumb_scope
       cs = Configuration::Scopes::Crumb.new(controller)
-      crumb_blocks_for_current_action.each do |block|
-        cs.instance_eval(&block)
-      end
+      cs.eval_multiple(crumb_blocks_for_current_action)
       cs
     end
 
