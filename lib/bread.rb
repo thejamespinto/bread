@@ -4,17 +4,13 @@ require 'colorize'
 
 require 'bread/configuration'
 require 'bread/controller'
+require 'bread/view'
 require 'bread/crumb'
-require 'bread/reader'
+require 'bread/runner'
 require 'bread/reloader'
 
 module Bread
   class << self
-    def for_controller(controller)
-      reload!
-      Reader.new(controller).read
-    end
-
     def reload!
       @reloader ||= Reloader.new(path)
       cache_classes? or @reloader.reload!
