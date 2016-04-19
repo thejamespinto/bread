@@ -1,8 +1,6 @@
 language: ruby
 rvm:
-  - 1.9.3
-  - 2.0.0
-  - 2.1.0
+  - 2.3.0
 gemfile:
   - gemfiles/rails-3-2-stable.gemfile
   - gemfiles/rails-4-0-stable.gemfile
@@ -10,7 +8,7 @@ gemfile:
   - gemfiles/rails-4-2-stable.gemfile
 matrix:
   include:
-    - rvm: 2.2.1
+    - rvm: 2.3.0
       gemfile: gemfiles/rails-master.gemfile
 script: bundle exec rspec spec
 cache:
